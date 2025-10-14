@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login-form',
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './login-form.html',
   styleUrl: './login-form.css'
 })

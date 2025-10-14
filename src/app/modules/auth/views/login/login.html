@@ -1,1 +1,43 @@
-<p>login works!</p>
+<mat-card appearance="outlined" class="w-full max-w-2xl mx-auto mt-40">
+    <mat-card-content>
+        <div class=" flex items-center justify-center bg-gray-50 dark:bg-gray-900 p-4">
+            <div class="w-full max-w-md space-y-6">
+                <div class="text-center">
+                    <h1 class="text-2xl font-bold text-gray-900 dark:text-white">{{'auth.login.title'|translate}}</h1>
+                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{{'auth.login.subtitle'|translate}}</p>
+                </div>
+
+                <div class="space-y-3">
+                    <button (click)="handleAuth('google')"
+                        class="w-full cursor-pointer uppercase flex items-center justify-center gap-2 border border-gray-300 dark:border-gray-700 rounded-md px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><!-- Google icon --></svg>
+                        {{'auth.login.buttons.provider'|translate:{'provider':'google'} }}
+                    </button>
+                    <button (click)="handleAuth('github')"
+                        class="w-full cursor-pointer uppercase flex items-center justify-center gap-2 border border-gray-300 dark:border-gray-700 rounded-md px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><!-- GitHub icon --></svg>
+                        {{'auth.login.buttons.provider'|translate:{'provider':'github'} }}
+                    </button>
+                </div>
+
+                <div class="relative text-center">
+                    <span class="absolute inset-0 flex items-center" aria-hidden="true">
+                        <span class="w-full border-t border-gray-300 dark:border-gray-700"></span>
+                    </span>
+                    <span
+                        class="relative px-2 bg-gray-50 dark:bg-gray-900 text-sm text-gray-500 dark:text-gray-400">{{'auth.login.divider'|translate
+                        }}</span>
+                </div>
+
+                <app-login-form></app-login-form>
+
+                <p class="mt-6 text-center text-sm text-neutral-600 dark:text-neutral-400">
+                    {{'auth.login.footer'|translate}}
+                    <a href="auth/register"
+                        class="font-medium text-indigo-600 dark:text-indigo-400 hover:underline">{{'auth.login.signUp'|translate}}</a>
+                </p>
+
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
