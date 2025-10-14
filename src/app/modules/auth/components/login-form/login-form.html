@@ -1,1 +1,12 @@
-<p>login-form works!</p>
+<form class="space-y-4" [formGroup]="frm" (ngSubmit)="submit()">
+
+    <app-input [frm]="frm" [control]="'email'" [label]="'auth.login.form.inputs.email.label'|translate"
+        [placeholder]="'auth.login.form.inputs.email.placeholder'|translate"></app-input>
+    <app-input [frm]="frm" [control]="'password'" type="password"
+        [label]="'auth.login.form.inputs.password.label'|translate"
+        [placeholder]="'auth.login.form.inputs.password.placeholder'|translate"></app-input>
+
+    <button [disabled]="loading" type="submit" (click)="submit()"
+        class="w-full uppercase bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 cursor-pointer px-4 rounded-md transition">{{'auth.login.buttons.signIn'|translate
+        }}</button>
+</form>

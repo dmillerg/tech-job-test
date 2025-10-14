@@ -1,11 +1,82 @@
 {
     "auth": {
-        "login": {},
-        "register": {}
+        "login": {
+            "title":"Welcome back",
+            "subtitle":"Sign in to your account to continue",
+            "buttons":{
+                "provider":"Continue with {{provider}}",
+                "signIn":"Sign in"
+            },
+            "form":{
+                "inputs":{
+                    "email":{
+                        "label":"Email address",
+                        "placeholder":"name@company.com"
+                    },
+                    "password":{
+                        "label":"Password",
+                        "placeholder":"Enter your password"
+                    },
+                    "forgot":"Forgot password?"
+                }
+            },
+            "divider":"Or continue with email",
+            "footer":"Don't have an account? ",
+            "signUp":"Sign up"
+        },
+        "register": {
+            "title":"Create an account",
+            "subtitle":"Get started with your free account",
+             "buttons":{
+                "provider":"Continue with {{provider}}",
+                "signUp":"Create account"
+            },
+            "form":{
+                "inputs":{
+                    "fullName":{
+                        "label":"Full name",
+                        "placeholder":"John Doe"
+                    },
+                    "email":{
+                        "label":"Email address",
+                        "placeholder":"name@company.com"
+                    },
+                    "password":{
+                        "label":"Password",
+                        "placeholder":"Create a strong password"
+                    },
+                    "confirm":{
+                        "label":"Confirm password",
+                        "placeholder":"Re-enter your password"
+                    }
+                }
+            },
+            "divider":"Or register with email",
+            "footer":"Already have an account? ",
+            "signIn":"Sign in"
+        }
     },
     "dashboard": {},
     "task": {
         "list": {},
         "detail": {}
+    },
+    "inputs": {
+        "hide": "hide",
+        "see": "view",
+        "validations": {
+            "invalidFormat": "Invalid format",
+            "required": "This field is required",
+            "maxLength": "This field must contain a maximum of {{max}} characters",
+            "minLength": "This field must contain a minimum of {{min}} characters",
+            "max": "This field must not be greater than {{max}}",
+            "min": "This field must not be less than {{min}}",
+            "passwordMustMatch": "Oops, passwords do not match."
+        }
+    },
+    "errorInputMessage": {
+        "passwordMustMatch": "Oops, passwords do not match.",
+        "required": "This field is required.",
+        "emailInvalid": "Invalid email format."
     }
 }
