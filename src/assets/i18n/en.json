@@ -1,0 +1,11 @@
+{
+    "auth": {
+        "login": {},
+        "register": {}
+    },
+    "dashboard": {},
+    "task": {
+        "list": {},
+        "detail": {}
+    }
+}
