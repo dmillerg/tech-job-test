@@ -1,30 +1,15 @@
-<div class="flex items-center justify-between py-4 w-full rounded-lg">
+<div class="bg-gray-50/30 backdrop-blur-xl dark:bg-gray-800/30 dark:text-white flex items-center justify-between py-4 w-full z-[9999]">
     <!-- Saludo -->
-    <div class="text-xl font-semibold text-gray-800 elegant-nav">
-       Dashboard
+    <div class="text-xl font-semibold elegant-nav">
+        Dashboard
     </div>
 
     <!-- Barra de búsqueda + íconos -->
     <div class="flex items-center gap-3">
-        <!-- Input de búsqueda -->
-        <div class="relative">
-            <input type="text" placeholder="Search anything..."
-                class="pl-10 pr-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm w-64" />
-            <!-- Icono de búsqueda -->
-            <svg class="absolute left-3 top-2.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor"
-                stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z" />
-            </svg>
-        </div>
 
-        <!-- Botón de refrescar -->
-        <button class="p-2 rounded-full hover:bg-gray-100 transition flex items-center">
-            <mat-icon class="material-icons-outlined">light_mode</mat-icon>
-            <mat-icon>dark_mode</mat-icon>
-        </button>
+        <app-language-select class="w-20"></app-language-select>
 
-        <!-- Botón de notificaciones -->
-     <img [src]="user()?.avatar" [alt]="user()?.name" class="rounded-full w-10 h-10">
+        <app-toggle-theme></app-toggle-theme>
+        <img [src]="user()?.avatar" [alt]="user()?.name" class="border border-gray-300 dark:border-gray-700 rounded-full w-10 h-10">
     </div>
 </div>

@@ -7,7 +7,7 @@
     @case('select'){
     <mat-select [formControl]="formControl" [placeholder]="placeholder">
         @for (opt of options; track opt) {
-        <mat-option [value]="opt.value">{{opt.name}}</mat-option>
+        <mat-option [value]="opt.value">{{opt.name|translate}}</mat-option>
         }
     </mat-select>
     }
@@ -15,6 +15,9 @@
     <input matInput [errorStateMatcher]="matcher" [type]="customType" [formControl]="formControl"
         [placeholder]="placeholder">
     }
+    }
+    @if(type==='search'){
+    <mat-icon matPrefix>search</mat-icon>
     }
     @if(type==='password'){
     <button class="absolute right-2 top-4" (click)="changeVisibility()">

@@ -40,6 +40,6 @@ export class Home {
 
   protected logout() {
     this.storewatcherService.logout();
-    this.router.navigate([''])
+    this.router.navigate(['auth'])
   }
 }

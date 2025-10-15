@@ -1,0 +1,7 @@
+<button (click)="setTheme()" class="p-2 rounded-full hover:bg-gray-100 transition flex items-center">
+    @if(theme.theme()==='dark'){
+    <mat-icon class="material-icons-outlined">light_mode</mat-icon>
+    }@else {
+    <mat-icon>dark_mode</mat-icon>
+    }
+</button>

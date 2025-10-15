@@ -1,11 +1,158 @@
 {
-    "auth": {
-        "login": {},
-        "register": {}
+  "auth": {
+    "login": {
+      "title": "Bienvenido de nuevo",
+      "subtitle": "Inicia sesión en tu cuenta para continuar",
+      "buttons": {
+        "provider": "Continuar con {{provider}}",
+        "signIn": "Iniciar sesión"
+      },
+      "form": {
+        "inputs": {
+          "email": {
+            "label": "Correo electrónico",
+            "placeholder": "nombre@empresa.com"
+          },
+          "password": {
+            "label": "Contraseña",
+            "placeholder": "Ingresa tu contraseña"
+          },
+          "forgot": "¿Olvidaste tu contraseña?"
+        }
+      },
+      "divider": "O continúa con correo electrónico",
+      "footer": "¿No tienes una cuenta? ",
+      "signUp": "Regístrate"
     },
-    "dashboard": {},
-    "task": {
-        "list": {},
-        "detail": {}
+    "register": {
+      "title": "Crear una cuenta",
+      "subtitle": "Comienza con tu cuenta gratuita",
+      "buttons": {
+        "provider": "Continuar con {{provider}}",
+        "signUp": "Crear cuenta"
+      },
+      "form": {
+        "inputs": {
+          "fullName": {
+            "label": "Nombre completo",
+            "placeholder": "Juan Pérez"
+          },
+          "email": {
+            "label": "Correo electrónico",
+            "placeholder": "nombre@empresa.com"
+          },
+          "password": {
+            "label": "Contraseña",
+            "placeholder": "Crea una contraseña segura"
+          },
+          "confirm": {
+            "label": "Confirmar contraseña",
+            "placeholder": "Reingresa tu contraseña"
+          }
+        }
+      },
+      "divider": "O regístrate con correo electrónico",
+      "footer": "¿Ya tienes una cuenta? ",
+      "signIn": "Iniciar sesión"
     }
+  },
+  "task": {
+    "list": {
+      "table": {
+        "actions": "Acciones"
+      },
+      "filter": {
+        "text": "Buscar tareas",
+        "status": "Seleccionar estado",
+        "all": "todos los estados"
+      }
+    },
+    "detail": {}
+  },
+  "inputs": {
+    "hide": "ocultar",
+    "see": "ver",
+    "validations": {
+      "invalidFormat": "Formato inválido",
+      "required": "Este campo es obligatorio",
+      "maxLength": "Este campo debe tener un máximo de {{max}} caracteres",
+      "minLength": "Este campo debe tener un mínimo de {{min}} caracteres",
+      "max": "Este campo no debe ser mayor que {{max}}",
+      "min": "Este campo no debe ser menor que {{min}}",
+      "passwordMustMatch": "Ups, las contraseñas no coinciden."
+    }
+  },
+  "errorInputMessage": {
+    "passwordMustMatch": "Ups, las contraseñas no coinciden.",
+    "required": "Este campo es obligatorio.",
+    "emailInvalid": "Formato de correo inválido."
+  },
+  "dashboard": {
+    "card": {
+      "complete": {
+        "title": "Completadas",
+        "footer": "Tareas completadas"
+      },
+      "pending": {
+        "title": "Pendientes",
+        "footer": "Tareas en progreso"
+      },
+      "total": {
+        "title": "Totales",
+        "footer": "Tareas registradas"
+      },
+      "resume": {
+        "title": "Resumen de tareas",
+        "total": "Total",
+        "completed": "Completadas",
+        "pending": "Pendientes"
+      },
+      "registered": {
+        "title": "Tareas registradas",
+        "tasks": "Tareas",
+        "months": "Meses",
+        "tooltip": "tareas registradas"
+      },
+      "recent": {
+        "title": "Tareas recientes",
+        "table": {
+          "no": "Nº",
+          "title": "Título",
+          "description": "Descripción",
+          "created": "Creado",
+          "status": "Estado"
+        }
+      }
+    }
+  },
+  "month": {
+    "january": "Enero",
+    "february": "Febrero",
+    "march": "Marzo",
+    "april": "Abril",
+    "may": "Mayo",
+    "june": "Junio",
+    "july": "Julio",
+    "august": "Agosto",
+    "september": "Septiembre",
+    "october": "Octubre",
+    "november": "Noviembre",
+    "december": "Diciembre"
+  },
+  "commons": {
+    "complete": "completadas",
+    "pending": "pendientes",
+    "buttons": {
+      "loading": "enviando datos...",
+      "loadingProvider": "conectando con {{provider}}"
+    }
+  },
+  "sidenav": {
+    "title": "TechJob",
+    "subtitle": "prueba técnica",
+    "menu": "Menú principal",
+    "dashboard": "Panel",
+    "tasks": "Tareas",
+    "logout": "Cerrar sesión"
+  }
 }

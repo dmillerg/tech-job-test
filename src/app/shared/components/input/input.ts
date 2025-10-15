@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { FormControl, FormGroup, FormGroupDirective, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
@@ -7,6 +7,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { Options } from '../../../core/models/option.model';
 import {ErrorStateMatcher} from '@angular/material/core';
 import {MatButtonModule} from '@angular/material/button';
+import { CommonModule } from '@angular/common';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -18,7 +19,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 
 @Component({
   selector: 'app-input',
-  imports: [ReactiveFormsModule, MatInputModule, TranslateModule, MatSelectModule, MatIconModule, MatButtonModule],
+  imports: [ReactiveFormsModule, MatInputModule, TranslateModule, MatSelectModule, MatIconModule, MatButtonModule, CommonModule],
   templateUrl: './input.html',
   styleUrl: './input.css'
 })

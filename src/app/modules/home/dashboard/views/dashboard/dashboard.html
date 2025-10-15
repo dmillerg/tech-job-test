@@ -1,11 +1,11 @@
 <div class="w-full grid grid-cols-1 md:grid-cols-4 gap-4 pb-8">
 
     @for (card of cardResume; track $index) {
-    <div class="bg-white rounded-2xl border border-gray-300 shadow-md p-6 ">
+    <div class="bg-white dark:bg-gray-900 rounded-2xl border dark:border-gray-700 border-gray-300 shadow-md p-6 ">
         <div class="flex items-start justify-between">
             <div class="flex flex-col gap-2">
                 <h2 class="text-sm font-medium text-gray-500">{{card.title|translate}}</h2>
-                <div class="text-6xl font-bold text-gray-900">{{card.cant| number:'1.0-0'}}</div>
+                <div class="text-6xl font-bold text-gray-900 dark:text-gray-100">{{card.cant| number:'1.0-0'}}</div>
             </div>
             <div [class]="card.class" class="flex items-center justify-center rounded-lg p-2">
                 <mat-icon>{{card.icon}}</mat-icon>
@@ -21,11 +21,11 @@
     }
 
     <app-donut-chart [tasks]="tasks"
-        class="bg-white rounded-2xl border border-gray-300 shadow-md p-6 col-span-2"></app-donut-chart>
+        class="bg-white dark:bg-gray-900 rounded-2xl border  dark:border-gray-700 border-gray-300 shadow-md p-6 col-span-2"></app-donut-chart>
 
-    <app-line-chart [tasks]="tasks" class="bg-white rounded-2xl border border-gray-300 shadow-md p-6 col-span-2 ">
+    <app-line-chart [tasks]="tasks" class="bg-white dark:bg-gray-900  dark:border-gray-700 rounded-2xl border border-gray-300 shadow-md p-6 col-span-2 ">
     </app-line-chart>
 
     <app-recent-tasks [tasks]="tasks"
-        class="bg-white rounded-2xl border border-gray-300 shadow-md p-6 col-span-4"></app-recent-tasks>
+        class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-300  dark:border-gray-700 shadow-md p-6 col-span-4"></app-recent-tasks>
 </div>

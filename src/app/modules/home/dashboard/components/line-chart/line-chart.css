@@ -1,0 +1,15 @@
+.chart-container .x.axis text {
+  fill: #4a5568; /* gris oscuro para modo claro */
+}
+
+.dark .chart-container .x.axis text {
+  fill: #e2e8f0; /* gris claro para modo oscuro */
+}
+
+.chart-container .y.axis text {
+  fill: #4a5568; /* modo claro */
+}
+
+.dark .chart-container .y.axis text {
+  fill: #e2e8f0; /* modo oscuro */
+}
