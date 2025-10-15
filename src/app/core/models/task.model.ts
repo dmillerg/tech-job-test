@@ -1,6 +1,6 @@
 export enum TaskState {
-    PENDING = 'PENDING',
-    COMPLETE = 'COMPLETE'
+    PENDING = 'commons.pending',
+    COMPLETE = 'commons.complete'
 }
 
 export interface Task {

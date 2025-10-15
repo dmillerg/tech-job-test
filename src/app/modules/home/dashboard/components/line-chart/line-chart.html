@@ -1,0 +1,19 @@
+<h2 class="text-lg font-extrabold text-gray-700 mb-4 elegant-nav">{{'dashboard.card.registered.title'|translate}}</h2>
+<div #chartContainer class="chart-container">
+  <ngx-charts-line-chart
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="salesData"
+    [xAxis]="true"
+    [yAxis]="true"
+    [legend]="false"
+    [legendPosition]="position"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [xAxisLabel]="'dashboard.card.registered.months'|translate"
+    [yAxisLabel]="'dashboard.card.registered.tasks'|translate"
+    [autoScale]="true"
+    [animations]="true"
+    [curve]="curve">
+  </ngx-charts-line-chart>
+</div>

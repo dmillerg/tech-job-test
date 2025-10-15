@@ -1,62 +1,61 @@
 {
     "auth": {
         "login": {
-            "title":"Welcome back",
-            "subtitle":"Sign in to your account to continue",
-            "buttons":{
-                "provider":"Continue with {{provider}}",
-                "signIn":"Sign in"
+            "title": "Welcome back",
+            "subtitle": "Sign in to your account to continue",
+            "buttons": {
+                "provider": "Continue with {{provider}}",
+                "signIn": "Sign in"
             },
-            "form":{
-                "inputs":{
-                    "email":{
-                        "label":"Email address",
-                        "placeholder":"name@company.com"
+            "form": {
+                "inputs": {
+                    "email": {
+                        "label": "Email address",
+                        "placeholder": "name@company.com"
                     },
-                    "password":{
-                        "label":"Password",
-                        "placeholder":"Enter your password"
+                    "password": {
+                        "label": "Password",
+                        "placeholder": "Enter your password"
                     },
-                    "forgot":"Forgot password?"
+                    "forgot": "Forgot password?"
                 }
             },
-            "divider":"Or continue with email",
-            "footer":"Don't have an account? ",
-            "signUp":"Sign up"
+            "divider": "Or continue with email",
+            "footer": "Don't have an account? ",
+            "signUp": "Sign up"
         },
         "register": {
-            "title":"Create an account",
-            "subtitle":"Get started with your free account",
-             "buttons":{
-                "provider":"Continue with {{provider}}",
-                "signUp":"Create account"
+            "title": "Create an account",
+            "subtitle": "Get started with your free account",
+            "buttons": {
+                "provider": "Continue with {{provider}}",
+                "signUp": "Create account"
             },
-            "form":{
-                "inputs":{
-                    "fullName":{
-                        "label":"Full name",
-                        "placeholder":"John Doe"
+            "form": {
+                "inputs": {
+                    "fullName": {
+                        "label": "Full name",
+                        "placeholder": "John Doe"
                     },
-                    "email":{
-                        "label":"Email address",
-                        "placeholder":"name@company.com"
+                    "email": {
+                        "label": "Email address",
+                        "placeholder": "name@company.com"
                     },
-                    "password":{
-                        "label":"Password",
-                        "placeholder":"Create a strong password"
+                    "password": {
+                        "label": "Password",
+                        "placeholder": "Create a strong password"
                     },
-                    "confirm":{
-                        "label":"Confirm password",
-                        "placeholder":"Re-enter your password"
+                    "confirm": {
+                        "label": "Confirm password",
+                        "placeholder": "Re-enter your password"
                     }
                 }
             },
-            "divider":"Or register with email",
-            "footer":"Already have an account? ",
-            "signIn":"Sign in"
+            "divider": "Or register with email",
+            "footer": "Already have an account? ",
+            "signIn": "Sign in"
         }
     },
-    "dashboard": {},
     "task": {
         "list": {},
         "detail": {}
@@ -78,5 +77,73 @@
         "passwordMustMatch": "Oops, passwords do not match.",
         "required": "This field is required.",
         "emailInvalid": "Invalid email format."
+    },
+    "dashboard": {
+        "card": {
+            "complete": {
+                "title": "Completed",
+                "footer": "Completed tasks"
+            },
+            "pending": {
+                "title": "Pending",
+                "footer": "Tasks in progress"
+            },
+            "total": {
+                "title": "Totals",
+                "footer": "Registered tasks"
+            },
+            "resume": {
+                "title": "Resume task",
+                "total": "Total",
+                "completed": "Completed",
+                "pending": "Pending"
+            },
+            "registered": {
+                "title": "Registered tasks",
+                "tasks": "Tasks",
+                "months": "Months",
+                "tooltip": "registered tasks"
+            },
+            "recent": {
+                "title": "Recent Tasks",
+                "table": {
+                    "no": "No",
+                    "title": "Title",
+                    "description": "Description",
+                    "created": "Created",
+                    "status": "Status"
+                }
+            }
+        }
+    },
+    "month": {
+        "january": "January",
+        "february": "February",
+        "march": "March",
+        "april": "April",
+        "may": "May",
+        "june": "June",
+        "july": "July",
+        "august": "August",
+        "september": "September",
+        "october": "October",
+        "november": "November",
+        "december": "December"
+    },
+    "commons": {
+        "complete": "completed",
+        "pending": "pending",
+        "buttons":{
+            "loading":"sending data...",
+            "loadingProvider":"connecting with {{provider}}"
+        }
+    },
+    "sidenav":{
+        "title":"TechJob",
+        "subtitle":"technical test",
+        "menu":"Main menu",
+        "dashboard":"Dashboard",
+        "tasks":"Tasks",
+        "logout":"Log Out"
     }
 }

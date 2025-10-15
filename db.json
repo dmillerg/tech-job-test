@@ -1,0 +1,84 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Diseñar dashboard de ventas",
+      "description": "Crear el layout inicial para el módulo de análisis de ventas.",
+      "state": "commons.pending",
+      "createdAt": "2025-10-01T09:30:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 2,
+      "title": "Integrar ngx-charts",
+      "description": "Agregar gráficos de línea y pastel al dashboard.",
+      "state": "commons.complete",
+      "createdAt": "2025-10-02T14:15:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 3,
+      "title": "Configurar tema oscuro",
+      "description": "Adaptar estilos para compatibilidad con modo oscuro.",
+      "state": "commons.pending",
+      "createdAt": "2025-10-03T11:00:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 4,
+      "title": "Optimizar SSR",
+      "description": "Verificar que los componentes sean seguros para renderizado del lado del servidor.",
+      "state": "commons.complete",
+      "createdAt": "2025-10-04T16:45:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 5,
+      "title": "Internacionalizar etiquetas",
+      "description": "Usar ngx-translate para soportar múltiples idiomas.",
+      "state": "commons.pending",
+      "createdAt": "2025-10-05T08:20:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 6,
+      "title": "Auditar componentes federados",
+      "description": "Realizar una revisión exhaustiva de los módulos federados para asegurar que cumplen con los estándares de trazabilidad, encapsulación y compatibilidad SSR. Documentar cualquier inconsistencia y proponer refactorizaciones.",
+      "state": "commons.pending",
+      "createdAt": "2025-10-06T10:00:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 7,
+      "title": "Refactorizar integración de ngx-charts",
+      "description": "Actualizar los componentes de gráficos para que utilicen `ResizeObserver` y adaptabilidad temática. Asegurar que los gráficos respondan correctamente a cambios de idioma y modo oscuro, sin romper el renderizado del lado del servidor.",
+      "state": "commons.complete",
+      "createdAt": "2025-10-07T13:45:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 8,
+      "title": "Implementar sistema de observabilidad",
+      "description": "Diseñar e implementar un sistema modular de observabilidad para los microservicios del dashboard. Incluir trazas de eventos, métricas de rendimiento y alertas configurables. Integrar con herramientas externas si es posible.",
+      "state": "commons.pending",
+      "createdAt": "2025-10-08T09:20:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 9,
+      "title": "Optimizar carga inicial del dashboard",
+      "description": "Analizar el rendimiento de carga inicial del dashboard en entornos de bajo recurso. Aplicar técnicas de lazy loading, prerenderizado y reducción de dependencias para mejorar el tiempo de interacción.",
+      "state": "commons.complete",
+      "createdAt": "2025-10-09T15:30:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 10,
+      "title": "Diseñar sistema de permisos granular",
+      "description": "Crear un sistema de control de acceso basado en roles y permisos específicos por módulo. Asegurar que cada componente federado pueda validar su contexto de seguridad sin acoplamiento excesivo.",
+      "state": "commons.pending",
+      "createdAt": "2025-10-10T11:10:00.000Z",
+      "createdBy": 101
+    }
+  ]
+}

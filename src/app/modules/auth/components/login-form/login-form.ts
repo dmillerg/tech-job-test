@@ -1,9 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { InputComponent } from '../../../../shared/components/input/input';
 import { AuthService } from '../../../../core/services/auth.service';
 import { Router } from '@angular/router';
+import { StorageWatcherService } from '../../../../core/services/store-watcher.service';
 
 @Component({
   selector: 'app-login-form',
@@ -15,6 +16,7 @@ import { Router } from '@angular/router';
 export class LoginForm {
 
   protected loading: boolean = false;
+  @Output() navigate = new EventEmitter<boolean>();
   private readonly fb = inject(FormBuilder);
   protected frm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
@@ -23,6 +25,7 @@ export class LoginForm {
 
   constructor(
     private readonly authService: AuthService,
+    private readonly storeWatcherService: StorageWatcherService,
     private readonly router: Router
   ) { }
 
@@ -35,8 +38,9 @@ export class LoginForm {
       password: data.password!
     }
     this.authService.login(credential).subscribe({
-      next: () => {
-        this.router.navigate(['dashboard']);
+      next: (response: any) => {
+        this.storeWatcherService.setUser(JSON.stringify({ accessToken: response.access_token, refreshToken: response.refresh_token }))
+        this.router.navigate(['dashboard'])
       }
     }
     );

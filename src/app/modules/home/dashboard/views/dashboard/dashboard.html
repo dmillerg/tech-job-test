@@ -1,0 +1,31 @@
+<div class="w-full grid grid-cols-1 md:grid-cols-4 gap-4 pb-8">
+
+    @for (card of cardResume; track $index) {
+    <div class="bg-white rounded-2xl border border-gray-300 shadow-md p-6 ">
+        <div class="flex items-start justify-between">
+            <div class="flex flex-col gap-2">
+                <h2 class="text-sm font-medium text-gray-500">{{card.title|translate}}</h2>
+                <div class="text-6xl font-bold text-gray-900">{{card.cant| number:'1.0-0'}}</div>
+            </div>
+            <div [class]="card.class" class="flex items-center justify-center rounded-lg p-2">
+                <mat-icon>{{card.icon}}</mat-icon>
+            </div>
+        </div>
+        <div class="flex items-center mt-2 text-sm text-green-600">
+            <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5 10l5-5 5 5H5z" clip-rule="evenodd" />
+            </svg>
+            <span>{{card.footer|translate}}</span>
+        </div>
+    </div>
+    }
+
+    <app-donut-chart [tasks]="tasks"
+        class="bg-white rounded-2xl border border-gray-300 shadow-md p-6 col-span-2"></app-donut-chart>
+
+    <app-line-chart [tasks]="tasks" class="bg-white rounded-2xl border border-gray-300 shadow-md p-6 col-span-2 ">
+    </app-line-chart>
+
+    <app-recent-tasks [tasks]="tasks"
+        class="bg-white rounded-2xl border border-gray-300 shadow-md p-6 col-span-4"></app-recent-tasks>
+</div>

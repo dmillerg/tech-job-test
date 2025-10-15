@@ -2,11 +2,13 @@
     <button (click)="handleAuth('google')"
         class="w-full cursor-pointer uppercase flex items-center justify-center gap-2 border border-gray-300 dark:border-gray-700 rounded-md px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><!-- Google icon --></svg>
-        {{'auth.login.buttons.provider'|translate:{'provider':'google'} }}
+        {{(loading()==='google'?'commons.buttons.loadingProvider':'auth.login.buttons.provider')|translate:{'provider':'google'}
+        }}
     </button>
     <button (click)="handleAuth('github')"
         class="w-full cursor-pointer uppercase flex items-center justify-center gap-2 border border-gray-300 dark:border-gray-700 rounded-md px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><!-- GitHub icon --></svg>
-        {{'auth.login.buttons.provider'|translate:{'provider':'github'} }}
+        {{(loading()==='github'?'commons.buttons.loadingProvider':'auth.login.buttons.provider')|translate:{'provider':'github'}
+        }}
     </button>
 </div>

@@ -12,6 +12,6 @@
         [placeholder]="'auth.register.form.inputs.confirm.placeholder'|translate"></app-input>
 
     <button [disabled]="loading" type="submit" (click)="submit()"
-        class="w-full uppercase bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 cursor-pointer px-4 rounded-md transition">{{'auth.register.buttons.signUp'|translate
+        class="w-full uppercase bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 cursor-pointer px-4 rounded-md transition">{{(loading?'commons.buttons.loading':'auth.login.buttons.signUp')|translate
         }}</button>
 </form>
