@@ -36,3 +36,8 @@ body {
 .mat-mdc-table{
     background-color: transparent !important;
 }
+
+.mdc-data-table__row>.mat-mdc-cell{
+    padding-block: 10px;
+    border-top: 1px solid rgb(185, 185, 185) !important;
+}
