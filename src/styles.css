@@ -1,5 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import "tailwindcss";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-drawer.mat-drawer-opened.mat-drawer-opened {
+    /* width: fit-content; */
+}
+
+@font-face {
+    font-family: poppin-medium;
+    src: url("./assets/fonts/Poppins-Medium.ttf");
+}
+
+* {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+}
+
+.elegant-nav {
+
+    text-transform: uppercase;
+    font-size: 0.875rem;
+}
+
+.mat-mdc-table{
+    background-color: transparent !important;
+}

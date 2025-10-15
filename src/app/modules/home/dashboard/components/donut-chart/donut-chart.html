@@ -1,0 +1,33 @@
+<div class="w-full h-full flex flex-col gap-8">
+    <h2 class="text-lg font-semibold text-gray-700 mb-4 elegant-nav">Resume task</h2>
+
+    <div class="flex items-center justify-between">
+        <div class="chart-wrapper" #chartContainer2>
+            <ngx-charts-pie-chart [view]="view" [results]="invoiceData" [scheme]="colorScheme" [doughnut]="true" [legend]="false"
+                [labels]="false" [animations]="true">
+            </ngx-charts-pie-chart>
+
+            <div class="chart-center flex flex-col gap-2 items-center">
+                <span class="text-4xl">{{ getTotal() }}</span>
+                <span class="text-sm text-gray-500">{{'dashboard.card.resume.total'|translate}}</span>
+            </div>
+        </div>
+
+
+        <div class="w-1/2 pl-4 space-y-2 text-sm text-gray-600">
+            <div class="flex items-center justify-between">
+
+                <div class="flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-blue-500"></div> {{'dashboard.card.resume.completed'|translate}}
+                </div>
+                <strong class="font-bold">{{ invoiceData[0].value | number:'1.0-0' }}</strong>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-blue-200"></div> {{'dashboard.card.resume.pending'|translate}}
+                </div>
+                <strong class="font-bold">{{ invoiceData[1].value | number:'1.0-0' }}</strong>
+            </div>
+        </div>
+    </div>
+</div>

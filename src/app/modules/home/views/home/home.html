@@ -1,0 +1,48 @@
+<mat-drawer-container class="example-container min-h-screen">
+    <mat-drawer mode="side" opened>
+        <div class="h-screen w-3/4 bg-gray-900 text-white flex flex-col justify-between">
+            <!-- Logo y título -->
+            <div>
+                <div class="flex items-center gap-2 px-6 py-4 border-b border-gray-700">
+                    <svg class="w-6 h-6 text-indigo-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7v6c0 5.25 3.75 9.75 10 13 6.25-3.25 10-7.75 10-13V7l-10-5z" />
+                    </svg>
+                    <div>
+                        <h1 class="text-lg font-bold">{{'sidenav.title'|translate}}</h1>
+                        <p class="text-xs text-gray-400">{{'sidenav.subtitle'|translate}}</p>
+                    </div>
+                </div>
+
+                <!-- Navegación -->
+                <nav class="mt-6 px-4">
+                    <div class=" text-white/40 mb-2 text-sm">{{'sidenav.menu'|translate}}</div>
+                    <a href="dashboard"
+                        [ngClass]="{'bg-indigo-600 text-white': route.includes('dashboard'), 'hover:bg-gray-800 text-white/60': !route.includes('dashboard')}"
+                        class="block px-4 flex items-center gap-3 py-2 rounded-md  "><mat-icon>dashboard</mat-icon>
+                        {{'sidenav.dashboard'|translate}}</a>
+                    <a href="task"
+                        [ngClass]="{'bg-indigo-600 text-white': route.includes('task'), 'hover:bg-gray-800 text-white/60': !route.includes('task')}"
+                        class="block px-4 flex items-center gap-3 py-2 rounded-md  mt-2"><mat-icon>checklist</mat-icon>
+                        {{'sidenav.tasks'|translate}}</a>
+                </nav>
+            </div>
+
+            <!-- Logout -->
+            <div class="px-6 py-4 border-t border-gray-700">
+                <button (click)="logout()" href="#"
+                    class="flex items-center gap-2 text-sm text-gray-300 hover:text-white">
+                    <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M16 13v-2H7V8l-5 4 5 4v-3h9zM20 3h-8v2h8v14h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" />
+                    </svg>
+                    {{'sidenav.logout'|translate}}
+                </button>
+            </div>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div class="mx-auto max-w-7xl h-screen overflow-y-auto">
+            <app-navbar class="sticky top-0" [user]="user"></app-navbar>
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>
