@@ -79,6 +79,166 @@
       "state": "commons.pending",
       "createdAt": "2025-10-10T11:10:00.000Z",
       "createdBy": 101
+    },
+    {
+      "id": 11,
+      "title": "Crear módulo de autenticación",
+      "description": "Implementar login, registro y recuperación de contraseña con validaciones y tokens JWT.",
+      "state": "commons.complete",
+      "createdAt": "2025-10-11T09:00:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 12,
+      "title": "Diseñar sistema de notificaciones",
+      "description": "Agregar soporte para notificaciones push y alertas internas en el dashboard.",
+      "state": "commons.pending",
+      "createdAt": "2025-10-12T10:30:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 13,
+      "title": "Optimizar bundle de producción",
+      "description": "Reducir tamaño del bundle usando tree-shaking y lazy loading.",
+      "state": "commons.complete",
+      "createdAt": "2025-10-13T14:10:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 14,
+      "title": "Integrar sistema de roles",
+      "description": "Definir jerarquías de acceso y permisos por tipo de usuario.",
+      "state": "commons.pending",
+      "createdAt": "2025-10-14T11:45:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 15,
+      "title": "Auditar seguridad de endpoints",
+      "description": "Revisar autenticación, autorización y sanitización de datos en APIs.",
+      "state": "commons.complete",
+      "createdAt": "2025-10-15T08:20:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 16,
+      "title": "Internacionalizar mensajes de error",
+      "description": "Traducir y adaptar mensajes de validación y errores del sistema.",
+      "state": "commons.pending",
+      "createdAt": "2025-10-16T13:00:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 17,
+      "title": "Diseñar vista de perfil de usuario",
+      "description": "Crear componente para mostrar y editar datos personales.",
+      "state": "commons.complete",
+      "createdAt": "2025-10-17T09:40:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 18,
+      "title": "Configurar CI/CD con GitHub Actions",
+      "description": "Automatizar pruebas, builds y despliegues en entorno de staging.",
+      "state": "commons.pending",
+      "createdAt": "2025-10-18T15:30:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 19,
+      "title": "Crear documentación técnica",
+      "description": "Generar documentación para desarrolladores y usuarios finales.",
+      "state": "commons.complete",
+      "createdAt": "2025-10-19T12:10:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 20,
+      "title": "Diseñar sistema de búsqueda",
+      "description": "Implementar búsqueda por texto con filtros y ordenamiento.",
+      "state": "commons.pending",
+      "createdAt": "2025-10-20T10:00:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 21,
+      "title": "Agregar soporte para gráficos dinámicos",
+      "description": "Permitir que los usuarios configuren sus propios gráficos en tiempo real.",
+      "state": "commons.complete",
+      "createdAt": "2025-10-21T11:30:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 22,
+      "title": "Refactorizar servicios de datos",
+      "description": "Separar lógica de negocio en servicios reutilizables.",
+      "state": "commons.pending",
+      "createdAt": "2025-10-22T14:45:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 23,
+      "title": "Diseñar landing page",
+      "description": "Crear página de bienvenida con información del producto.",
+      "state": "commons.complete",
+      "createdAt": "2025-10-23T09:15:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 24,
+      "title": "Implementar sistema de logs",
+      "description": "Registrar eventos importantes del sistema para auditoría.",
+      "state": "commons.pending",
+      "createdAt": "2025-10-24T13:50:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 25,
+      "title": "Optimizar rendimiento en móviles",
+      "description": "Reducir consumo de recursos en dispositivos móviles.",
+      "state": "commons.complete",
+      "createdAt": "2025-10-25T10:20:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 26,
+      "title": "Diseñar sistema de etiquetas",
+      "description": "Permitir categorizar tareas con etiquetas personalizadas.",
+      "state": "commons.pending",
+      "createdAt": "2025-10-26T12:00:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 27,
+      "title": "Agregar exportación a PDF",
+      "description": "Permitir exportar reportes y gráficos a formato PDF.",
+      "state": "commons.complete",
+      "createdAt": "2025-10-27T14:30:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 28,
+      "title": "Diseñar sistema de ayuda contextual",
+      "description": "Mostrar sugerencias y documentación según el módulo activo.",
+      "state": "commons.pending",
+      "createdAt": "2025-10-28T09:40:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 29,
+      "title": "Integrar soporte multitenant",
+      "description": "Permitir que múltiples organizaciones usen el sistema con aislamiento de datos.",
+      "state": "commons.complete",
+      "createdAt": "2025-10-29T11:10:00.000Z",
+      "createdBy": 101
+    },
+    {
+      "id": 30,
+      "title": "Auditar accesibilidad",
+      "description": "Revisar compatibilidad con lectores de pantalla y navegación por teclado.",
+      "state": "commons.pending",
+      "createdAt": "2025-10-30T13:25:00.000Z",
+      "createdBy": 101
     }
   ]
 }
