@@ -1,4 +1,4 @@
-<mat-drawer-container class="example-container min-h-screen">
+<mat-drawer-container class="w-screen min-h-screen">
     <mat-drawer mode="side" opened>
         <div class="h-screen w-3/4 bg-gray-900 text-white flex flex-col justify-between">
             <!-- Logo y título -->
@@ -40,7 +40,7 @@
         </div>
     </mat-drawer>
     <mat-drawer-content>
-        <div class="mx-auto max-w-7xl h-screen overflow-y-auto">
+        <div class="mx-auto max-w-7xl h-screen ">
             <app-navbar class="sticky top-0" [user]="user"></app-navbar>
             <router-outlet></router-outlet>
         </div>

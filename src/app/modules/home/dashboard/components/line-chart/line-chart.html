@@ -1,6 +1,10 @@
-<h2 class="text-lg font-extrabold text-gray-700 mb-4 elegant-nav">{{'dashboard.card.registered.title'|translate}}</h2>
+<h2 class="text-lg font-extrabold text-gray-500 dark:text-gray-300 mb-4 elegant-nav">
+  {{'dashboard.card.registered.title'|translate}}
+</h2>
+
 <div #chartContainer class="chart-container">
   <ngx-charts-line-chart
+  class="text-red-500"
     [view]="view"
     [scheme]="colorScheme"
     [results]="salesData"

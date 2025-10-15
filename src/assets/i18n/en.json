@@ -60,6 +60,11 @@
         "list": {
             "table":{
                 "actions":"Actions"
+            },
+            "filter":{
+                "text":"Search tasks",
+                "status":"Select status",
+                "all":"all status"
             }
         },
         "detail": {}

@@ -1,8 +1,13 @@
-<div class="bg-white rounded-2xl border border-gray-300 p-6 shadow-md mt-6">
+<div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-300  dark:border-gray-700 shadow-md p-6 mt-6">
     <div class="flex items-center justify-between">
         <h2 class="elegant-nav">Tasks</h2>
         <button matButton="filled"><mat-icon>add_box</mat-icon> New task</button>
     </div>
+
+    <form class="flex justify-between gap-4">
+        <app-input [frm]="frm" [type]="'search'" [control]="'text'" [placeholder]="'task.list.filter.text'|translate"  class="flex-1"></app-input>
+        <app-input [frm]="frm" [type]="'select'" [placeholder]="'task.list.filter.status'|translate" [options]="options" [control]="'statu'"></app-input>
+    </form>
 
     <div class=" mat-elevation-z8">
         <div class="relative flex items-center justify-center ">
@@ -58,9 +63,9 @@
                         <div class="flex gap-2 ">
                             <button matIconButton>
                                 @if(row.state===taskState.PENDING){
-                                    <mat-icon>circle</mat-icon>
+                                <mat-icon>circle</mat-icon>
                                 }@else{
-                                    <mat-icon>check_circle</mat-icon>
+                                <mat-icon>check_circle</mat-icon>
                                 }
                             </button>
                             <button matIconButton><mat-icon>edit</mat-icon></button>

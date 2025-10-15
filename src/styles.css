@@ -1,43 +1,83 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.mat-drawer.mat-drawer-opened.mat-drawer-opened {
-    /* width: fit-content; */
-}
 
 @font-face {
-    font-family: poppin-medium;
-    src: url("./assets/fonts/Poppins-Medium.ttf");
+  font-family: poppin-medium;
+  src: url("./assets/fonts/Poppins-Medium.ttf");
 }
 
 * {
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.1em;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.1em;
 }
 
 .elegant-nav {
-
-    text-transform: uppercase;
-    font-size: 0.875rem;
+  text-transform: uppercase;
+  font-size: 0.875rem;
 }
 
-.mat-mdc-table{
-    background-color: transparent !important;
+.mat-mdc-table {
+  background-color: transparent !important;
 }
 
-.mdc-data-table__row>.mat-mdc-cell{
-    padding-block: 10px;
-    border-top: 1px solid rgb(185, 185, 185) !important;
+.mat-mdc-header-cell {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+.mat-mdc-header-cell,
+.mdc-data-table__row>.mat-mdc-cell {
+  color: #474747;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
+.dark .mat-mdc-header-cell,
+.dark .mdc-data-table__row>.mat-mdc-cell {
+  color: #e2e8f0;
+}
+
+
+.mdc-data-table__row>.mat-mdc-cell {
+  padding-block: 10px;
+  border-top: 1px solid rgb(185, 185, 185) !important;
+}
+
+.mat-drawer-container,
+.mat-drawer.mat-drawer-side {
+  background-color: transparent !important;
+}
+
+.mat-mdc-paginator {
+  background-color: transparent !important;
+}
+
+.dark .mat-mdc-paginator,
+.dark .mat-mdc-icon-button {
+  color: #e2e8f0;
+  fill: white;
+}
+
+.dark .mat-mdc-card-outlined{
+  background-color: #101828;
+  border-color: #323233;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled){
+  background-color: transparent !important;
 }
