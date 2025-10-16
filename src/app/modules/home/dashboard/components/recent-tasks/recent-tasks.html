@@ -1,5 +1,5 @@
-<h2 class="text-lg font-semibold text-gray-500 mb-4 elegant-nav">Recent Tasks</h2>
-<div class=" mat-elevation-z8">
+<h2 class="text-lg font-semibold text-gray-500 dark:text-gray-300 mb-4 elegant-nav">Recent Tasks</h2>
+<div class="md:block hidden mat-elevation-z8">
     <div class="relative flex items-center justify-center ">
 
         <table mat-table [dataSource]="data" class="min-h-62" matSort matSortActive="created" matSortDisableClear
@@ -55,4 +55,16 @@
         </div>
         }
     </div>
+</div>
+<div class="grid grid-cols-2 md:hidden gap-3 md:hidden">
+    @for (item of data; track $index) {
+    <button
+        class="bg-white relative dark:bg-gray-900 rounded-2xl border border-gray-300  dark:border-gray-700 shadow-md px-6 py-10">
+        <div [ngClass]="{'bg-amber-500/10 text-amber-500':item.state===taskState.PENDING,'bg-emerald-500/10 text-emerald-500':item.state===taskState.COMPLETE}"
+            class="text-center rounded-full px-2 py-1 uppercase absolute top-2 right-2"> {{item.state |translate}}
+        </div>
+        <h2 class="text-gray-700 dark:text-white elegant-nav">{{item.title}}</h2>
+        <p class="text-gray-600 dark:text-gray-400">{{item.description}}</p>
+    </button>
+    }
 </div>

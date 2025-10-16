@@ -81,3 +81,53 @@ body {
 .mdc-text-field--filled:not(.mdc-text-field--disabled){
   background-color: transparent !important;
 }
+
+.mat-mdc-dialog-surface{
+  border-radius: 10px !important;
+}
+
+.dark .mat-mdc-dialog-surface{
+  background-color: #101828;
+  color: white;
+}
+
+.dark .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input{
+  color: rgb(185, 185, 185) !important;
+}
+
+.dark .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input::placeholder{
+  color: rgb(107, 107, 107) !important;
+}
+
+.dark .mdc-text-field--filled:not(.mdc-text-field--disabled):not(.mdc-text-field--focused) .mdc-floating-label{
+  color: rgb(155, 154, 154);
+}
+
+.dark .mat-mdc-select-min-line{
+  color: rgb(185, 185, 185);
+}
+
+.dark div.mat-mdc-select-panel{
+  background-color: rgb(65, 65, 65) !important;
+}
+
+.dark .mat-mdc-option .mdc-list-item__primary-text{
+  color: rgb(207, 206, 206) !important;
+}
+
+
+.mat-drawer{
+  border-radius: 0 !important;
+}
+
+.dark .mat-mdc-menu-panel{
+  background-color: rgb(65, 65, 65) !important;
+}
+
+.dark .mat-mdc-menu-item-text{
+ color: rgb(207, 206, 206) !important;
+}
+
+.dark .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled):not(.mat-mdc-option-multiple){
+  background-color: #474747;
+}

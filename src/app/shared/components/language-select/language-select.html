@@ -1,3 +1,6 @@
-<form action="" [formGroup]="frm">
-    <app-input [frm]="frm" [control]="'language'" type="select" [options]="options"></app-input>
-</form>
+<button [matMenuTriggerFor]="menu" class="w-8 h-8 cursor-pointer flex justify-center items-center hover:bg-gray-700/30 rounded-full p-2">{{languageSelected}}</button>
+<mat-menu #menu="matMenu">
+    @for (lang of options; track $index) {
+    <button mat-menu-item (click)="setLanguage(lang.value)">{{lang.name}}</button>
+    }
+</mat-menu>

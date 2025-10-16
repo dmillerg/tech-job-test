@@ -1,4 +1,4 @@
-<form class="space-y-4" [formGroup]="frm" (ngSubmit)="submit()">
+<form class="space-y-4" [formGroup]="frm">
 
     <app-input [frm]="frm" [control]="'name'" [label]="'auth.register.form.inputs.fullName.label'|translate"
         [placeholder]="'auth.register.form.inputs.fullName.placeholder'|translate"></app-input>
@@ -7,11 +7,11 @@
     <app-input [frm]="frm" [control]="'password'" type="password"
         [label]="'auth.register.form.inputs.password.label'|translate"
         [placeholder]="'auth.register.form.inputs.password.placeholder'|translate"></app-input>
-    <app-input [frm]="frm" [control]="'password'" type="password"
+    <app-input [frm]="frm" [control]="'confirm'" type="password"
         [label]="'auth.register.form.inputs.confirm.label'|translate"
         [placeholder]="'auth.register.form.inputs.confirm.placeholder'|translate"></app-input>
 
     <button [disabled]="loading" type="submit" (click)="submit()"
-        class="w-full uppercase bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 cursor-pointer px-4 rounded-md transition">{{(loading?'commons.buttons.loading':'auth.login.buttons.signUp')|translate
+        class="w-full uppercase bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 cursor-pointer px-4 rounded-md transition">{{(loading?'commons.buttons.loading':'auth.register.buttons.signUp')|translate
         }}</button>
 </form>

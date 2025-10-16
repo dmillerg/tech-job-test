@@ -57,17 +57,56 @@
         }
     },
     "task": {
+        "title":"Tasks",
         "list": {
-            "table":{
-                "actions":"Actions"
+            "newTask":"New Task",
+            "delete": {
+                "modal": "Are you sure you want to delete this task? This action cannot be undone."
             },
-            "filter":{
-                "text":"Search tasks",
-                "status":"Select status",
-                "all":"all status"
+            "table": {
+                "actions": "Actions"
+            },
+            "filter": {
+                "text": "Search tasks",
+                "status": "Select status",
+                "all": "all status"
             }
         },
-        "detail": {}
+        "detail": {
+            "id": "ID",
+            "createdBy": "Created By",
+            "priority": "Priority",
+            "created": "Created",
+            "status": "Status",
+            "description": "Description",
+            "note": "Note",
+            "markComplete": "Mark Complete"
+        },
+        "form": {
+            "title": {
+                "add": "Create task",
+                "update": "Update task",
+                "delete": "Delete task"
+            },
+            "inputs": {
+                "title": {
+                    "label": "Title",
+                    "placeholder": "e.g. Redesign homepage"
+                },
+                "description": {
+                    "label": "Description",
+                    "placeholder": "Add details or steps related to the task"
+                },
+                "priority": {
+                    "label": "Priority",
+                    "placeholder": "Select the importance level for this task"
+                },
+                "note": {
+                    "label": "Note",
+                    "placeholder": "Add any relevant observations or comments"
+                }
+            }
+        }
     },
     "inputs": {
         "hide": "hide",
@@ -140,19 +179,40 @@
         "december": "December"
     },
     "commons": {
+        "hi":"Hi, ",
         "complete": "completed",
         "pending": "pending",
-        "buttons":{
-            "loading":"sending data...",
-            "loadingProvider":"connecting with {{provider}}"
+        "low": "Low",
+        "middle": "Middle",
+        "high": "High",
+        "modal": {
+            "success": "Action completed successfully."
+        },
+        "buttons": {
+            "loading": "sending data...",
+            "loadingProvider": "connecting with {{provider}}",
+            "accept": "Accept",
+            "cancel": "Cancel",
+            "back": "Back",
+            "edit": "Edit",
+            "delete": "Delete",
+            "close": "Close"
+        },
+        "paginator": {
+            "itemsPerPageLabel": "Tasks per page",
+            "nextPageLabel": "Next",
+            "previousPageLabel": "Previous",
+            "firstPageLabel": "First page",
+            "lastPageLabel": "Last page",
+            "range": "{{start}} - {{end}} of {{length}}"
         }
     },
-    "sidenav":{
-        "title":"TechJob",
-        "subtitle":"technical test",
-        "menu":"Main menu",
-        "dashboard":"Dashboard",
-        "tasks":"Tasks",
-        "logout":"Log Out"
+    "sidenav": {
+        "title": "TechJob",
+        "subtitle": "technical test",
+        "menu": "Main menu",
+        "dashboard": "Dashboard",
+        "tasks": "Tasks",
+        "logout": "Log Out"
     }
 }

@@ -1,15 +1,20 @@
-<div class="bg-gray-50/30 backdrop-blur-xl dark:bg-gray-800/30 dark:text-white flex items-center justify-between py-4 w-full z-[9999]">
+<div
+    class="bg-gray-50/30 backdrop-blur-xl dark:bg-gray-800/30 dark:text-white flex items-center justify-between py-4 w-full z-[9999] px-4">
     <!-- Saludo -->
-    <div class="text-xl font-semibold elegant-nav">
-        Dashboard
-    </div>
+    <button (click)="changeDrawer()" class="cursor-pointer font-semibold elegant-nav flex gap-2 items-center">
+        <i class="bi bi-list text-lg"></i>
+    </button>
 
     <!-- Barra de búsqueda + íconos -->
-    <div class="flex items-center gap-3">
-
-        <app-language-select class="w-20"></app-language-select>
-
+    @if(user()){
+    <div class="flex items-center gap-6">
+        <app-language-select></app-language-select>
         <app-toggle-theme></app-toggle-theme>
-        <img [src]="user()?.avatar" [alt]="user()?.name" class="border border-gray-300 dark:border-gray-700 rounded-full w-10 h-10">
+
+        <img [matTooltip]="('commons.hi'|translate)+ user()?.name" [src]="user()?.avatar" [alt]="user()?.name"
+            (error)="onImageError($event)"
+            class="border border-gray-300 dark:border-gray-700 rounded-full w-10 h-10 p-2" />
+
     </div>
+    }
 </div>

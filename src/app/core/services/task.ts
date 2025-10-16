@@ -16,6 +16,10 @@ export class TaskService {
     return this.http.get<Task[]>(`${this.baseUrl}/tasks`);
   }
 
+  getTaskOne(id:number): Observable<Task> {
+    return this.http.get<Task>(`${this.baseUrl}/tasks/${id}`);
+  }
+
   // addProducto(producto: any): Observable<any> {
   //   return this.http.post(`${this.baseUrl}/productos`, producto);
   // }
