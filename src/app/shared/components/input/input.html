@@ -20,10 +20,10 @@
     <mat-icon matPrefix>search</mat-icon>
     }
     @if(type==='password'){
-    <button class="absolute right-2 top-4" (click)="changeVisibility()">
+    <button class="absolute right-2 top-4 dark:text-white/40 cursor-pointer" (click)="changeVisibility()">
         @if(customType ==='password'){
-        <mat-icon>visibility</mat-icon>}@else {
-        <mat-icon>visibility_off</mat-icon>
+       <i class="bi bi-eye"></i> }@else {
+        <i class="bi bi-eye-slash"></i> 
         }
     </button>
     }

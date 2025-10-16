@@ -1,32 +1,29 @@
-<mat-card appearance="outlined" class="w-full max-w-2xl">
-    <mat-card-content>
-        <div class=" flex items-center justify-center bg-gray-50 dark:bg-gray-900 p-4">
-            <div class="w-full max-w-md space-y-6">
-                <div class="text-center">
-                    <h1 class="text-2xl font-bold text-gray-900 dark:text-white">{{'auth.register.title'|translate}}</h1>
-                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{{'auth.register.subtitle'|translate}}</p>
-                </div>
-
-                <app-oauth-provider (navigate)="gotoDashboard()"></app-oauth-provider>
-
-                <div class="relative text-center">
-                    <span class="absolute inset-0 flex items-center" aria-hidden="true">
-                        <span class="w-full border-t border-gray-300 dark:border-gray-700"></span>
-                    </span>
-                    <span
-                        class="relative px-2 bg-gray-50 dark:bg-gray-900 text-sm text-gray-500 dark:text-gray-400">{{'auth.register.divider'|translate
-                        }}</span>
-                </div>
-
-                <app-register-form></app-register-form>
-
-                <p class="mt-6 text-center text-sm text-neutral-600 dark:text-neutral-400">
-                    {{'auth.register.footer'|translate}}
-                    <a href="auth/login"
-                        class="font-medium text-indigo-600 dark:text-indigo-400 hover:underline">{{'auth.register.signIn'|translate}}</a>
-                </p>
-
-            </div>
+<div
+    class="flex items-center justify-center bg-gray-50 dark:bg-transparent md:dark:bg-gray-900 p-4 rounded-xl p-8 md:shadow-md md:border border-gray-300/50 dark:border-gray-600/60 mt-20 md:mt-0">
+    <div class="w-full max-w-md space-y-6">
+        <div class="text-center">
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">{{'auth.register.title'|translate}}</h1>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{{'auth.register.subtitle'|translate}}</p>
         </div>
-    </mat-card-content>
-</mat-card>
+
+        <app-oauth-provider (navigate)="gotoDashboard()"></app-oauth-provider>
+
+        <div class="relative text-center">
+            <span class="absolute inset-0 flex items-center" aria-hidden="true">
+                <span class="w-full border-t border-gray-300 dark:border-gray-700"></span>
+            </span>
+            <span
+                class="relative px-2 bg-gray-50 dark:bg-gray-900 text-sm text-gray-500 dark:text-gray-400">{{'auth.register.divider'|translate
+                }}</span>
+        </div>
+
+        <app-register-form></app-register-form>
+
+        <p class="mt-6 text-center text-sm text-neutral-600 dark:text-neutral-400">
+            {{'auth.register.footer'|translate}}
+            <a href="auth/login"
+                class="font-medium text-indigo-600 dark:text-indigo-400 hover:underline">{{'auth.register.signIn'|translate}}</a>
+        </p>
+
+    </div>
+</div>

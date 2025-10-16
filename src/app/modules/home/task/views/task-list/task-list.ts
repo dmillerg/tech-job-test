@@ -1,25 +1,35 @@
 import { Component, effect, inject, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TaskService } from '../../../../../core/services/task';
 import { take } from 'rxjs';
 import { Task, TaskState } from '../../../../../core/models/task.model';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSort, MatSortModule } from '@angular/material/sort';
-import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginator, MatPaginatorIntl, MatPaginatorModule } from '@angular/material/paginator';
 import { CommonModule, DatePipe } from '@angular/common';
 import { FormBuilder } from '@angular/forms';
 import { InputComponent } from '../../../../../shared/components/input/input';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { MatDialog } from '@angular/material/dialog';
+import { TaskForm } from '../../components/task-form/task-form';
+import { ConfirmModal } from '../../components/confirm-modal/confirm-modal';
+import { Router } from '@angular/router';
+import { CustomPaginatorIntl } from '../../../../../shared/components/customePaginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
   selector: 'app-task-list',
   imports: [MatButtonModule, MatIconModule, CommonModule, TranslateModule, MatTableModule, MatProgressSpinnerModule, MatSortModule, MatPaginatorModule, DatePipe, InputComponent],
   templateUrl: './task-list.html',
-  styleUrl: './task-list.css'
+  styleUrl: './task-list.css',
+  providers: [
+    { provide: MatPaginatorIntl, useClass: CustomPaginatorIntl }
+  ]
+
 })
 export class TaskList {
 
@@ -48,9 +58,13 @@ export class TaskList {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+  private _snackBar = inject(MatSnackBar);
+
 
   constructor(
-    private readonly taskService: TaskService
+    private readonly taskService: TaskService,
+    private readonly router: Router,
+    private readonly translate: TranslateService
   ) {
     this.getTasks()
     effect(() => {
@@ -78,6 +92,16 @@ export class TaskList {
     this.getTasks()
   }
 
+
+  get paginatedFilteredData(): Task[] {
+    if (!this.paginator) return this.dataSource.filteredData; // ← fallback sin paginación
+
+    const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
+    const endIndex = startIndex + this.paginator.pageSize;
+    return this.dataSource.filteredData.slice(startIndex, endIndex);
+  }
+
+
   applyFilter(text: string | null, status: string | null) {
     this.dataSource.filterPredicate = (data, filter) => {
       const [textFilter, statusFilter] = filter.split('||').map(f => f.trim().toLowerCase());
@@ -92,5 +116,47 @@ export class TaskList {
     const safeStatus = status ?? '';
     const combinedFilter = `${safeText}||${safeStatus}`;
     this.dataSource.filter = combinedFilter;
+  }
+
+  dialog = inject(MatDialog);
+
+  openDialog(data?: Task) {
+    const dialogRef = this.dialog.open(TaskForm, {
+      data,
+      disableClose: true
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        const index = this.tasks.findIndex(t => t.id === result.id);
+        if (index > -1) {
+          this.tasks[index] = result;
+        } else {
+          this.tasks.unshift(result);
+        }
+        this.dataSource.data = [...this.tasks];
+      }
+    });
+  }
+
+  openConfirmDelete(data: Task) {
+    this.dialog.open(ConfirmModal, {
+      data,
+      disableClose: true
+    });
+  }
+
+  changeState(task: Task) {
+    this.openSnackBar(this.translate.instant('commons.modal.success'), this.translate.instant('commons.buttons.close'));
+    const newState = task.state === TaskState.PENDING ? TaskState.COMPLETE : TaskState.PENDING;
+    task.state = newState;
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action);
+  }
+
+  detail(task: Task) {
+    this.router.navigate([`task/${task.id}`])
   }
 }

@@ -1,32 +1,32 @@
-<div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-300  dark:border-gray-700 shadow-md p-6 mt-6">
+<div
+    class="bg-white md:dark:bg-gray-900 rounded-2xl md:border border-gray-300 dark:bg-gray-800 dark:border-gray-700 md:shadow-md p-6 mt-6">
     <div class="flex items-center justify-between">
-        <h2 class="elegant-nav">Tasks</h2>
-        <button matButton="filled"><mat-icon>add_box</mat-icon> New task</button>
+        <h2 class="elegant-nav dark:text-white">{{'task.title'|translate}}</h2>
+        <button (click)="openDialog()" matButton="filled"><i class="bi bi-plus-lg"></i> {{'task.list.newTask'|translate}}</button>
     </div>
 
-    <form class="flex justify-between gap-4">
-        <app-input [frm]="frm" [type]="'search'" [control]="'text'" [placeholder]="'task.list.filter.text'|translate"  class="flex-1"></app-input>
-        <app-input [frm]="frm" [type]="'select'" [placeholder]="'task.list.filter.status'|translate" [options]="options" [control]="'statu'"></app-input>
+    <form class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+        <app-input [frm]="frm" [type]="'search'" [control]="'text'" [placeholder]="'task.list.filter.text'|translate"
+            class="col-span-3"></app-input>
+        <app-input [frm]="frm" [type]="'select'" [placeholder]="'task.list.filter.status'|translate" [options]="options"
+            [control]="'statu'"></app-input>
     </form>
 
-    <div class=" mat-elevation-z8">
-        <div class="relative flex items-center justify-center ">
+    <div class="mat-elevation-z8 hidden md:block">
+        <div class="relative items-center justify-center ">
 
             <table mat-table [dataSource]="dataSource" class="min-h-62" matSort matSortActive="created"
                 matSortDisableClear matSortDirection="desc">
-                <!-- Number Column -->
                 <ng-container matColumnDef="id">
                     <th mat-header-cell *matHeaderCellDef>{{'dashboard.card.recent.table.no'|translate}}</th>
                     <td mat-cell *matCellDef="let row">{{row.id}}</td>
                 </ng-container>
 
-                <!-- Title Column -->
                 <ng-container matColumnDef="title">
                     <th mat-header-cell *matHeaderCellDef>{{'dashboard.card.recent.table.title'|translate}}</th>
                     <td mat-cell *matCellDef="let row">{{row.title}}</td>
                 </ng-container>
 
-                <!-- State Column -->
                 <ng-container matColumnDef="description">
                     <th mat-header-cell *matHeaderCellDef>{{'dashboard.card.recent.table.description'|translate}}</th>
                     <td mat-cell *matCellDef="let row">
@@ -34,7 +34,6 @@
                     </td>
                 </ng-container>
 
-                <!-- Created Column -->
                 <ng-container matColumnDef="created">
                     <th mat-header-cell *matHeaderCellDef disableClear>
                         {{'dashboard.card.recent.table.created'|translate}}
@@ -61,16 +60,19 @@
                     </th>
                     <td mat-cell *matCellDef="let row">
                         <div class="flex gap-2 ">
-                            <button matIconButton>
+                            <button matIconButton (click)="changeState(row)">
                                 @if(row.state===taskState.PENDING){
-                                <mat-icon>circle</mat-icon>
+                                <i class="bi  text-md bi-circle text-gray-600 dark:text-gray-400"></i>
                                 }@else{
-                                <mat-icon>check_circle</mat-icon>
+                                <i class="bi  text-md bi-check-circle text-gray-600 dark:text-gray-400"></i>
                                 }
                             </button>
-                            <button matIconButton><mat-icon>edit</mat-icon></button>
-                            <button matIconButton><mat-icon>delete</mat-icon></button>
-                            <button matIconButton><mat-icon>visibility</mat-icon></button>
+                            <button matIconButton (click)="openDialog(row)"> <i
+                                    class="bi  text-md bi-pencil text-gray-600 dark:text-gray-400"></i></button>
+                            <button matIconButton (click)="openConfirmDelete(row)"> <i
+                                    class="bi  text-md bi-trash text-gray-600 dark:text-gray-400"></i></button>
+                            <button matIconButton (click)="detail(row)"> <i
+                                    class="bi  text-md bi-eye text-gray-600 dark:text-gray-400"></i></button>
                         </div>
                     </td>
                 </ng-container>
@@ -87,7 +89,22 @@
             </div>
             }
         </div>
-        <mat-paginator [length]="tasks.length" [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
-        </mat-paginator>
+
+
     </div>
+    <div class="grid grid-cols-2 md:hidden gap-3">
+        @for (item of paginatedFilteredData; track $index) {
+        <button (click)="detail(item)"
+            class="bg-white relative dark:bg-gray-900 rounded-2xl border border-gray-300  dark:border-gray-700 shadow-md px-6 py-10">
+            <div [ngClass]="{'bg-amber-500/10 text-amber-500':item.state===taskState.PENDING,'bg-emerald-500/10 text-emerald-500':item.state===taskState.COMPLETE}"
+                            class="text-center rounded-full px-2 py-1 uppercase absolute top-2 right-2"> {{item.state |translate}}
+                        </div>
+            <h2 class="text-gray-700 dark:text-white elegant-nav">{{item.title}}</h2>
+            <p class="text-gray-600 dark:text-gray-400">{{item.description}}</p>
+        </button>
+        }
+    </div>
+    <mat-paginator [length]="dataSource.filteredData.length" [pageSize]="5" [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons>
+    </mat-paginator>
 </div>

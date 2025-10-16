@@ -1,22 +1,17 @@
-import { Component, effect, inject } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { Component } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { InputComponent } from '../input/input';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-language-select',
-  imports: [ReactiveFormsModule, TranslateModule, InputComponent],
+  imports: [TranslateModule, MatButtonModule, MatMenuModule],
   templateUrl: './language-select.html',
   styleUrl: './language-select.css'
 })
 export class LanguageSelect {
 
-  private readonly fb = inject(FormBuilder);
-  protected frm = this.fb.group({
-    language: [localStorage.getItem('language')]
-  });
-  languageSignal = toSignal(this.frm.get('language')!.valueChanges, { initialValue: localStorage.getItem('language') });
+  protected languageSelected: string = localStorage.getItem('language')?.toUpperCase() ?? 'EN';
 
   options = [
     { name: 'ES', value: 'es' },
@@ -26,11 +21,13 @@ export class LanguageSelect {
   constructor(
     private readonly translate: TranslateService
   ) {
-    effect(() => {
-      const value = this.languageSignal();
-      localStorage.setItem('language', value!)
-      translate.use(value!)
-    });
+    const browserLang = navigator.language?.split('-')[0];
+    this.languageSelected = localStorage.getItem('language')?.toUpperCase() ?? browserLang.toUpperCase() ?? 'EN';
+  }
 
+  setLanguage(language: string) {
+    this.languageSelected = language.toUpperCase();
+    localStorage.setItem('language', language!)
+    this.translate.use(language!)
   }
 }

@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>
+    <span class="dark:text-white elegant-nav">{{'task.form.title.delete'|translate}}</span>
+</h2>
+<mat-dialog-content>
+    <p class="dark:text-white mb-4">{{'task.list.delete.modal'|translate}}</p>
+    <div class="flex gap-4">
+        <button [disabled]="loading" (click)="close()"
+            class="w-full uppercase bg-gray-600 hover:bg-gray-700 text-white font-medium py-3 cursor-pointer px-4 rounded-md transition">{{'commons.buttons.cancel'|translate
+            }}</button>
+        <button [disabled]="loading" type="submit" (click)="submit()"
+            class="w-full uppercase bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 cursor-pointer px-4 rounded-md transition">{{(loading?'commons.buttons.loading':'commons.buttons.accept')|translate
+            }}</button>
+    </div>
+</mat-dialog-content>

@@ -1,1 +1,25 @@
-<p>task-form works!</p>
+<h2 mat-dialog-title>
+    <span class="dark:text-white elegant-nav">{{(data?'task.form.title.update':'task.form.title.add')|translate}}</span>
+</h2>
+<mat-dialog-content>
+    <form [formGroup]="frm">
+        <app-input [frm]="frm" [control]="'title'" [label]="'task.form.inputs.title.label'|translate"
+            [placeholder]="'task.form.inputs.title.placeholder'|translate"></app-input>
+        <app-input [frm]="frm" [control]="'description'" type="textarea"
+            [label]="'task.form.inputs.description.label'|translate"
+            [placeholder]="'task.form.inputs.description.placeholder'|translate"></app-input>
+        <app-input [frm]="frm" [control]="'priority'" type="select" [options]="options"
+            [label]="'task.form.inputs.priority.label'|translate"
+            [placeholder]="'task.form.inputs.priority.placeholder'|translate"></app-input>
+        <app-input [frm]="frm" [control]="'note'" type="textarea" [label]="'task.form.inputs.note.label'|translate"
+            [placeholder]="'task.form.inputs.note.placeholder'|translate"></app-input>
+        <div class="flex gap-4">
+            <button [disabled]="loading" (click)="close()"
+                class="w-full uppercase bg-gray-600 hover:bg-gray-700 text-white font-medium py-3 cursor-pointer px-4 rounded-md transition">{{'commons.buttons.cancel'|translate
+                }}</button>
+            <button [disabled]="loading" type="submit" (click)="submit()"
+                class="w-full uppercase bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 cursor-pointer px-4 rounded-md transition">{{(loading?'commons.buttons.loading':'commons.buttons.accept')|translate
+                }}</button>
+        </div>
+    </form>
+</mat-dialog-content>

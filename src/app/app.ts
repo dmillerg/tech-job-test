@@ -22,7 +22,6 @@ export class App {
     theme.changeTheme()
     const browserLang = navigator.language?.split('-')[0];
     this.language = localStorage.getItem('language') ?? browserLang ?? 'es';
-    this.translate.use('en');
-    // this.translate.use(this.language)
+    this.translate.use(this.language)
   }
 }
