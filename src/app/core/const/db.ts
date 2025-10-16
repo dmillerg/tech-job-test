@@ -1,0 +1,104 @@
+export const database={
+    "tasks": [
+        {
+            "id": "TSK001",
+            "title": "Diseñar dashboard de ventas",
+            "description": "Crear el layout inicial para el módulo de análisis de ventas.",
+            "state": "commons.pending",
+            "createdAt": "2025-10-01T09:30:00.000Z",
+            "createdBy": "Laura Gómez",
+            "priority": "commons.high",
+            "note": "Es la base visual del módulo, debe estar lista antes de integrar datos."
+        },
+        {
+            "id": "TSK002",
+            "title": "Integrar ngx-charts",
+            "description": "Agregar gráficos de línea y pastel al dashboard.",
+            "state": "commons.complete",
+            "createdAt": "2025-10-02T14:15:00.000Z",
+            "createdBy": "Carlos Pérez",
+            "priority": "commons.middle",
+            "note": "Se usaron datos simulados para validar los gráficos."
+        },
+        {
+            "id": "TSK003",
+            "title": "Configurar tema oscuro",
+            "description": "Adaptar estilos para compatibilidad con modo oscuro.",
+            "state": "commons.pending",
+            "createdAt": "2025-10-03T11:00:00.000Z",
+            "createdBy": "Ana Rodríguez",
+            "priority": "commons.middle",
+            "note": "Revisar contraste en componentes interactivos."
+        },
+        {
+            "id": "TSK004",
+            "title": "Optimizar SSR",
+            "description": "Verificar que los componentes sean seguros para renderizado del lado del servidor.",
+            "state": "commons.complete",
+            "createdAt": "2025-10-04T16:45:00.000Z",
+            "createdBy": "Jorge Martínez",
+            "priority": "commons.high",
+            "note": "Se detectaron y corrigieron tres incompatibilidades con SSR."
+        },
+        {
+            "id": "TSK005",
+            "title": "Internacionalizar etiquetas",
+            "description": "Usar ngx-translate para soportar múltiples idiomas.",
+            "state": "commons.pending",
+            "createdAt": "2025-10-05T08:20:00.000Z",
+            "createdBy": "Sofía Herrera",
+            "priority": "commons.middle",
+            "note": "Faltan claves para los botones de acción."
+        },
+        {
+            "id": "TSK006",
+            "title": "Auditar componentes federados",
+            "description": "Revisión de módulos federados para trazabilidad y SSR.",
+            "state": "commons.pending",
+            "createdAt": "2025-10-06T10:00:00.000Z",
+            "createdBy": "Luis Torres",
+            "priority": "commons.high",
+            "note": "Se prioriza por impacto en producción y seguridad."
+        },
+        {
+            "id": "TSK007",
+            "title": "Refactorizar integración de ngx-charts",
+            "description": "Actualizar componentes con ResizeObserver y soporte de tema.",
+            "state": "commons.complete",
+            "createdAt": "2025-10-07T13:45:00.000Z",
+            "createdBy": "Valeria Díaz",
+            "priority": "commons.middle",
+            "note": "Los gráficos ahora responden a cambios de idioma y tema."
+        },
+        {
+            "id": "TSK008",
+            "title": "Implementar sistema de observabilidad",
+            "description": "Diseñar sistema modular con métricas y alertas.",
+            "state": "commons.pending",
+            "createdAt": "2025-10-08T09:20:00.000Z",
+            "createdBy": "Miguel Rivas",
+            "priority": "commons.high",
+            "note": "Se recomienda integrar con Prometheus y Grafana."
+        },
+        {
+            "id": "TSK009",
+            "title": "Optimizar carga inicial del dashboard",
+            "description": "Mejorar rendimiento con lazy loading y prerenderizado.",
+            "state": "commons.complete",
+            "createdAt": "2025-10-09T15:30:00.000Z",
+            "createdBy": "Natalia Suárez",
+            "priority": "commons.high",
+            "note": "Se redujo el TTI en más de 40%."
+        },
+        {
+            "id": "TSK010",
+            "title": "Diseñar sistema de permisos granular",
+            "description": "Control de acceso por roles y módulos.",
+            "state": "commons.pending",
+            "createdAt": "2025-10-10T11:10:00.000Z",
+            "createdBy": "Diego Fernández",
+            "priority": "commons.middle",
+            "note": "Pendiente definir jerarquías y validaciones por contexto."
+        }
+    ]
+}

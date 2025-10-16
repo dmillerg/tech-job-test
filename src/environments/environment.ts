@@ -1,3 +1,4 @@
 export const environment = {
-    back_url: 'http://ms.dveloxsoft.com/'
+    back_url: 'http://ms.dveloxsoft.com/',
+    authorizationHeader: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYWdlSWQiOiI0Y2E4YWRjZS0wMmExLTQ2NjktYjI5Yi0yYWJlNDgwNzdlZWQiLCJjb21wYW55SWQiOiJmY2VjZWMwZS01Mjg3LTQ1ZTItYmNmMS05ZTkxMjEwZjZkZjIiLCJvcmlnaW4iOiJodHRwczovL3RlY2gtam9iLmR2ZWxveHNvZnQuY29tIiwiaWF0IjoxNzYwNTg4NDg3LCJleHAiOjE3NjkxNDIwODd9.yICuS-ElzuH-TFXYEOc1cFI1q9LfI-ScE86kUxAZ-xI'
 };

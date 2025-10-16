@@ -37,9 +37,9 @@ export class TaskDetail {
 
   getTask() {
     const id = this.activatedRoute.snapshot.params['id']
-    this.taskService.getTaskOne(id).pipe(take(1)).subscribe({
+    this.taskService.getTask().pipe(take(1)).subscribe({
       next: (response) => {
-        this.task = response
+        this.task = response.filter(e => e.id === id)[0]
       }
     })
   }
