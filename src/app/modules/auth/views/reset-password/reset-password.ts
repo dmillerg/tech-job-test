@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { matchPasswordValidator } from '../../../../shared/validators/match-password.validator';
 import { take } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../../../core/services/auth.service';
 import { MatCardModule } from '@angular/material/card';
 import { InputComponent } from '../../../../shared/components/input/input';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-reset-password',
@@ -17,10 +18,14 @@ import { TranslateModule } from '@ngx-translate/core';
 export class ResetPassword {
 
   protected loading: boolean = false;
+  private _snackBar = inject(MatSnackBar);
   private readonly fb = inject(FormBuilder);
+  private readonly translate = inject(TranslateService);
+  private readonly router = inject(Router);
+
   protected frm = this.fb.group({
     password: ['', [Validators.required]],
-    confirm: ['', [matchPasswordValidator]],
+    confirm: ['', [Validators.required, matchPasswordValidator]],
   });
 
   constructor(
@@ -42,7 +47,17 @@ export class ResetPassword {
     this.authService.changePasword(data).pipe(take(1)).subscribe({
       next: () => {
         this.loading = false;
+        this.openSnackBar(this.translate.instant('commons.modal.success'), this.translate.instant('commons.buttons.close'));
+        this.router.navigate(['auth'])
       }, error: () => this.loading = false
     })
+  }
+
+  protected cancel() {
+    this.router.navigate(['auth'])
+  }
+
+  private openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action);
   }
 }

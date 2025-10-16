@@ -1,25 +1,26 @@
-<mat-card appearance="outlined" class="w-full max-w-2xl mx-auto mt-40">
-    <mat-card-content>
-        <div class=" flex items-center justify-center bg-gray-50 dark:bg-gray-900 p-4">
-            <div class="w-full max-w-md space-y-6">
-                <div class="text-center">
-                    <h1 class="text-2xl font-bold text-gray-900 dark:text-white">{{'auth.login.title'|translate}}</h1>
-                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{{'auth.login.subtitle'|translate}}</p>
-                </div>
-
-                <form class="space-y-4" [formGroup]="frm" (ngSubmit)="submit()">
-
-                    <app-input [frm]="frm" [control]="'token'" [type]="'textarea'"
-                        [label]="'auth.login.form.inputs.email.label'|translate"
-                        [placeholder]="'auth.login.form.inputs.email.placeholder'|translate"></app-input>
-
-
-                    <button [disabled]="loading" type="submit" (click)="submit()"
-                        class="w-full uppercase bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 cursor-pointer px-4 rounded-md transition">{{'auth.login.buttons.signIn'|translate
-                        }}</button>
-                </form>
-
-            </div>
+<div
+    class=" flex items-center justify-center bg-gray-50 dark:bg-transparent md:dark:bg-gray-900 p-4 rounded-xl p-8 md:shadow-md md:border border-gray-300/50 dark:border-gray-600/60">
+    <div class="w-full max-w-md space-y-6">
+        <div class="text-center">
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">{{'auth.confirm.title'|translate}}</h1>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{{'auth.confirm.subtitle'|translate}}</p>
         </div>
-    </mat-card-content>
-</mat-card>
+
+        <form class="space-y-4" [formGroup]="frm" >
+
+            <app-input [frm]="frm" [control]="'token'" [type]="'textarea'"
+                [label]="'auth.confirm.form.inputs.token.label'|translate"
+                [placeholder]="'auth.confirm.form.inputs.token.placeholder'|translate"></app-input>
+
+            <div class="flex gap-4 items-center">
+                <button [disabled]="loading" type="button" (click)="sendConfirmationToken()"
+                    class="w-full uppercase bg-gray-600 hover:bg-gray-700 text-white font-medium py-3 cursor-pointer px-4 rounded-md transition">{{(loadingResend?'commons.buttons.loading':'auth.confirm.buttons.resend')|translate
+                    }}</button>
+                <button [disabled]="loading" type="submit" (click)="submit()"
+                    class="w-full uppercase bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 cursor-pointer px-4 rounded-md transition">{{(loadingSubmit?'commons.buttons.loading':'auth.confirm.buttons.activate')|translate
+                    }}</button>
+            </div>
+        </form>
+
+    </div>
+</div>

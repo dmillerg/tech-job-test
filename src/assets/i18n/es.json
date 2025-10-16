@@ -3,6 +3,7 @@
     "login": {
       "title": "Bienvenido de nuevo",
       "subtitle": "Inicia sesión en tu cuenta para continuar",
+      "noactive": "Tu cuenta aún no está activa",
       "buttons": {
         "provider": "Continuar con {{provider}}",
         "signIn": "Iniciar sesión"
@@ -15,17 +16,17 @@
           },
           "password": {
             "label": "Contraseña",
-            "placeholder": "Ingresa tu contraseña"
+            "placeholder": "Introduce tu contraseña"
           },
           "forgot": "¿Olvidaste tu contraseña?"
         }
       },
-      "divider": "O continúa con correo electrónico",
+      "divider": "O continúa con tu correo",
       "footer": "¿No tienes una cuenta? ",
       "signUp": "Regístrate"
     },
     "register": {
-      "title": "Crear una cuenta",
+      "title": "Crea una cuenta",
       "subtitle": "Comienza con tu cuenta gratuita",
       "buttons": {
         "provider": "Continuar con {{provider}}",
@@ -47,17 +48,53 @@
           },
           "confirm": {
             "label": "Confirmar contraseña",
-            "placeholder": "Reingresa tu contraseña"
+            "placeholder": "Repite tu contraseña"
           }
         }
       },
-      "divider": "O regístrate con correo electrónico",
+      "divider": "O regístrate con tu correo",
       "footer": "¿Ya tienes una cuenta? ",
-      "signIn": "Iniciar sesión"
+      "signIn": "Inicia sesión"
+    },
+    "confirm": {
+      "title": "Confirma tu correo",
+      "subtitle": "Por favor revisa tu bandeja de entrada y copia el token enviado para activar tu cuenta.",
+      "buttons": {
+        "resend": "Reenviar correo",
+        "activate": "Activar cuenta"
+      },
+      "modal": {
+        "successEmail": "Correo enviado, revisa tu bandeja de entrada."
+      },
+      "form": {
+        "inputs": {
+          "token": {
+            "label": "Token",
+            "placeholder": "eyasjdnk522bjkk.dasbiuhn...."
+          }
+        }
+      }
+    },
+    "reset": {
+      "title": "Restablecer contraseña",
+      "subtitle": "Introduce tu nueva contraseña",
+      "buttons": {
+        "reset": "Restablecer"
+      }
+    },
+    "forgot": {
+      "buttons": {
+        "forgot": "¿Olvidaste tu contraseña?"
+      }
     }
   },
   "task": {
+    "title": "Tareas",
     "list": {
+      "newTask": "Nueva tarea",
+      "delete": {
+        "modal": "¿Estás seguro de que deseas eliminar esta tarea? Esta acción no se puede deshacer."
+      },
       "table": {
         "actions": "Acciones"
       },
@@ -67,7 +104,41 @@
         "all": "todos los estados"
       }
     },
-    "detail": {}
+    "detail": {
+      "id": "ID",
+      "createdBy": "Creado por",
+      "priority": "Prioridad",
+      "created": "Creado",
+      "status": "Estado",
+      "description": "Descripción",
+      "note": "Nota",
+      "markComplete": "Marcar como completada"
+    },
+    "form": {
+      "title": {
+        "add": "Crear tarea",
+        "update": "Actualizar tarea",
+        "delete": "Eliminar tarea"
+      },
+      "inputs": {
+        "title": {
+          "label": "Título",
+          "placeholder": "ej. Rediseñar página de inicio"
+        },
+        "description": {
+          "label": "Descripción",
+          "placeholder": "Agrega detalles o pasos relacionados con la tarea"
+        },
+        "priority": {
+          "label": "Prioridad",
+          "placeholder": "Selecciona el nivel de importancia de esta tarea"
+        },
+        "note": {
+          "label": "Nota",
+          "placeholder": "Agrega observaciones o comentarios relevantes"
+        }
+      }
+    }
   },
   "inputs": {
     "hide": "ocultar",
@@ -75,8 +146,8 @@
     "validations": {
       "invalidFormat": "Formato inválido",
       "required": "Este campo es obligatorio",
-      "maxLength": "Este campo debe tener un máximo de {{max}} caracteres",
-      "minLength": "Este campo debe tener un mínimo de {{min}} caracteres",
+      "maxLength": "Este campo debe contener un máximo de {{max}} caracteres",
+      "minLength": "Este campo debe contener un mínimo de {{min}} caracteres",
       "max": "Este campo no debe ser mayor que {{max}}",
       "min": "Este campo no debe ser menor que {{min}}",
       "passwordMustMatch": "Ups, las contraseñas no coinciden."
@@ -116,10 +187,10 @@
       "recent": {
         "title": "Tareas recientes",
         "table": {
-          "no": "Nº",
+          "no": "N°",
           "title": "Título",
           "description": "Descripción",
-          "created": "Creado",
+          "created": "Creada",
           "status": "Estado"
         }
       }
@@ -140,11 +211,32 @@
     "december": "Diciembre"
   },
   "commons": {
+    "hi": "Hola, ",
     "complete": "completadas",
     "pending": "pendientes",
+    "low": "Baja",
+    "middle": "Media",
+    "high": "Alta",
+    "modal": {
+      "success": "Acción completada con éxito."
+    },
     "buttons": {
       "loading": "enviando datos...",
-      "loadingProvider": "conectando con {{provider}}"
+      "loadingProvider": "conectando con {{provider}}",
+      "accept": "Aceptar",
+      "cancel": "Cancelar",
+      "back": "Atrás",
+      "edit": "Editar",
+      "delete": "Eliminar",
+      "close": "Cerrar"
+    },
+    "paginator": {
+      "itemsPerPageLabel": "Tareas por página",
+      "nextPageLabel": "Siguiente",
+      "previousPageLabel": "Anterior",
+      "firstPageLabel": "Primera página",
+      "lastPageLabel": "Última página",
+      "range": "{{start}} - {{end}} de {{length}}"
     }
   },
   "sidenav": {

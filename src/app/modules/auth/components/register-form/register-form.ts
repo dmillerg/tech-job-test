@@ -18,9 +18,9 @@ export class RegisterForm {
 
   private readonly fb = inject(FormBuilder);
   protected frm = this.fb.group({
-    avatar:[null],
-    phone:[null],
-    description:[null],
+    avatar: [null],
+    phone: [null],
+    description: [null],
     name: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(8)]],
@@ -37,12 +37,9 @@ export class RegisterForm {
     if (this.frm.invalid) this.frm.markAllAsTouched();
     this.loading = true;
     const data = this.frm.value as any;
-    console.log(data);
-    
     this.authService.register(data).pipe(take(1)).subscribe({
-      next: () => {
-        // this.showModal();
-      }, error: () => this.loading = false,
+      next: () => this.router.navigate([`auth/confirm/${data.email}`]),
+      error: () => this.loading = false,
       complete: () => this.loading = false
     })
   }

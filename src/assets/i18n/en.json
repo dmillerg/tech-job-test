@@ -3,6 +3,7 @@
         "login": {
             "title": "Welcome back",
             "subtitle": "Sign in to your account to continue",
+            "noactive":"Your account is not active yet",
             "buttons": {
                 "provider": "Continue with {{provider}}",
                 "signIn": "Sign in"
@@ -54,6 +55,37 @@
             "divider": "Or register with email",
             "footer": "Already have an account? ",
             "signIn": "Sign in"
+        },
+        "confirm":{
+            "title":"Confirm your email",
+            "subtitle":"Please check your inbox and copy the token sent to you to activate your account.",
+            "buttons":{
+                "resend":"Forward the email",
+                "activate":"Activate account"
+            },
+            "modal":{
+                "successEmail":"Mail sent, please check your inbox."
+            },
+            "form":{
+                "inputs":{
+                    "token":{
+                        "label":"Token",
+                        "placeholder":"eyasjdnk522bjkk.dasbiuhn...."
+                    }
+                }
+            }
+        },
+        "reset":{
+            "title":"Reset password",
+            "subtitle":"Enter your new password",
+            "buttons":{
+                "reset":"Reset"
+            }
+        },
+        "forgot":{
+            "buttons":{
+                "forgot":"Forgot password?"
+            }
         }
     },
     "task": {
